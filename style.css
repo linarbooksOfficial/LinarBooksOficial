@@ -1,0 +1,289 @@
+/* ===================================================
+   ШРИФТЫ И БАЗОВЫЕ НАСТРОЙКИ (С ПОДДЕРЖКОЙ КИРИЛЛИЦЫ)
+   =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Cormorant+Garamond:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================================================
+   КАСТОМНЫЙ ЧЕРНО-ЗОЛОТОЙ СКРОЛЛБАР
+   =================================================== */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #070708;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #aa7c11, #ffd700, #aa7c11);
+    border-radius: 5px;
+    border: 2px solid #050505;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #d4af37, #ffffff, #d4af37);
+}
+
+/* ===================================================
+   ОБЩИЕ СТИЛИ СТРАНИЦЫ
+   =================================================== */
+body {
+    background-color: #050507;
+    background: radial-gradient(ellipse at 50% 0%, #1c180a 0%, #050507 70%);
+    color: #e6e6e6;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* Золотые разделительные линии */
+.gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    margin: 60px auto;
+    width: 60%;
+}
+
+/* ===================================================
+   ГЛАВНЫЙ ЭКРАН (HERO / HERO-STAGE)
+   =================================================== */
+.hero,
+.hero-stage {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.hero-tag {
+    font-family: 'Forum', 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    color: #d4af37;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    padding: 8px 22px;
+    border-radius: 30px;
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.hero h1,
+.hero-stage h1 {
+    font-family: 'Forum', 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem); /* Оптимизировано под длину русских слов */
+    letter-spacing: 4px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #fff2a3 0%, #ffd700 40%, #aa7c11 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 35px rgba(255, 215, 0, 0.25);
+}
+
+.hero p,
+.hero-stage p {
+    font-size: 1.15rem;
+    color: #b0b0b0;
+    max-width: 680px;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Золотая кнопка */
+.btn-gold {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #8f650b 100%);
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-gold:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    transform: translateY(-3px);
+}
+
+/* ===================================================
+   СТИЛИ ДЛЯ ПОЛЕЙ ВВОДА И АДМИНКИ
+   =================================================== */
+.admin-input,
+input[type="text"],
+input[type="url"],
+input[type="email"],
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: #0d0e12;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.admin-input:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    background: #14151b;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #d4af37;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* ===================================================
+   ИНФОРМАЦИОННЫЕ БЛОКИ (СЕКЦИИ)
+   =================================================== */
+.section-title {
+    font-family: 'Forum', 'Cormorant Garamond', serif;
+    font-size: 2.3rem;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about-content {
+    background: #0d0e12;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 12px;
+    padding: 45px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    font-size: 1.05rem;
+    color: #cccccc;
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Блок цитаты / Манифест */
+.quote-box {
+    margin: 80px auto;
+    padding: 50px 30px;
+    text-align: center;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 80%);
+    border-left: 3px solid #d4af37;
+    border-right: 3px solid #d4af37;
+}
+
+.quote-box blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #f3e5ab;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.quote-box span {
+    color: #d4af37;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Сетка особенностей / Статуса */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.feature-item {
+    background: #0d0e12;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 35px 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    border-color: #ffd700;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+}
+
+.feature-item h3 {
+    font-family: 'Forum', serif;
+    color: #ffd700;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.feature-item p {
+    color: #999999;
+    font-size: 0.95rem;
+}
+
+/* ===================================================
+   ПОДВАЛ
+   =================================================== */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: #030304;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    color: #777777;
+    font-size: 0.9rem;
+}
+
+footer p:first-child {
+    color: #d4af37;
+    font-family: 'Forum', serif;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
